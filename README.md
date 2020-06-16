@@ -23,4 +23,13 @@ chmod 600 ~/.ssh/authorized_keys
 sudo nano /etc/ssh/sshd_config
 - change port to 2211 and passwordauthentication to no and reboot
 
+- install docker
+- install docker-compose 
+- git should be already installed (otherwise install)
+
+git clone https://github.com/DENSarjan/TIG_server
+
+- add certificates for the MQTT to /cert/mqtt (inside TIG_server)
+
+docker-compose up
 
