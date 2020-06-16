@@ -6,8 +6,9 @@ services:
     volumes:
       - ./tig/data/influxdb:/var/lib/influxdb
       - ./tig/conf/influxdb:/etc/influxdb/
-    restart_policy:
-        condition: on-failure
+    deploy:
+        restart_policy:
+          condition: on-failure
 
   telegraf:
     container_name: telegraf
@@ -15,7 +16,8 @@ services:
     volumes:
       - ./tig/conf/telegraf/telegraf.conf:/etc/telegraf/telegraf.conf
       - /var/run/docker.sock:/var/run/docker.sock
-    restart_policy:
+    deploy:
+      restart_policy:
         condition: on-failure
     
   grafana:
@@ -28,7 +30,8 @@ services:
       - ./tig/data/grafana:/var/lib/grafana
       - ./tig/log/grafana:/var/log/grafana
       - ./tig/conf/grafana/grafana.ini:/etc/grafana/grafana.ini
-    restart_policy:
+    deploy:
+      restart_policy:
         condition: on-failure
 
   mqtt:
@@ -42,5 +45,6 @@ services:
       - ./tig/data/mqtt/:/mosquitto/data/
       - ./tig/log/mqtt/:/mosquitto/log/
       - ./tig/cert/mqtt/:/mosquitto/cert/
-    restart_policy:
+    deploy:
+      restart_policy:
         condition: on-failure
