@@ -33,3 +33,8 @@ git clone https://github.com/DENSarjan/TIG_server
 
 docker-compose up -d
 
+
+- to shutdown 
+
+docker-compose down
+
