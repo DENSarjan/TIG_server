@@ -23,7 +23,6 @@ services:
   grafana:
     container_name: grafana
     image: grafana/grafana
-    user: "0"
     ports:
       - "3000:3000"
     volumes:
@@ -37,7 +36,6 @@ services:
   mqtt:
     container_name: mqtt
     image: eclipse-mosquitto:latest
-    user: "0"
     ports:
       - "8883:8883"
     volumes:
