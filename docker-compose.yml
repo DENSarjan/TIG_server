@@ -39,4 +39,16 @@ services:
       - data/mqtt/:/mosquitto/data/
       - log/mqtt/:/mosquitto/log/
       - cert/mqtt/:/mosquitto/cert/
-    restart: always
+    restart: always'
+
+volumes:
+  data/influxdb:
+  conf/influxdb:
+  conf/telegraf:
+  data/grafana:
+  log/grafana:
+  conf/grafana:
+  conf/mqtt:
+  data/mqtt:
+  log/mqtt:
+  cert/mqtt:
