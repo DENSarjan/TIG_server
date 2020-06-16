@@ -3,6 +3,7 @@ services:
   influxdb:
     container_name: influxdb
     image: influxdb
+    user : 0
     volumes:
       - ./data/influxdb:/var/lib/influxdb
       - ./conf/influxdb:/etc/influxdb/
@@ -13,6 +14,7 @@ services:
   telegraf:
     container_name: telegraf
     image: telegraf
+    user : 0
     volumes:
       - ./conf/telegraf/telegraf.conf:/etc/telegraf/telegraf.conf
       - /var/run/docker.sock:/var/run/docker.sock
@@ -23,6 +25,7 @@ services:
   grafana:
     container_name: grafana
     image: grafana/grafana
+    user : 0
     ports:
       - "3000:3000"
     volumes:
@@ -36,6 +39,7 @@ services:
   mqtt:
     container_name: mqtt
     image: eclipse-mosquitto:latest
+    user : 0
     ports:
       - "8883:8883"
     volumes:
