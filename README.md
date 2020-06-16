@@ -31,5 +31,5 @@ git clone https://github.com/DENSarjan/TIG_server
 
 - add certificates for the MQTT to /cert/mqtt (inside TIG_server)
 
-docker-compose up
+docker-compose up -d
 
