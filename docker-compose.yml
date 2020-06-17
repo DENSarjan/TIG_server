@@ -51,7 +51,7 @@ services:
       restart_policy:
         condition: on-failure
 
-  mqtt:
+  node-red:
       container_name: node-red
       image: nodered/node-red:latest
       environment:
@@ -64,3 +64,9 @@ services:
       deploy:
         restart_policy:
           condition: on-failure
+
+      command: bash -c "
+          sudo npm install node-red-contrib-moment 
+        "
+
+          
