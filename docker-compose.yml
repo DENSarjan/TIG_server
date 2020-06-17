@@ -66,7 +66,7 @@ services:
           condition: on-failure
 
       command: bash -c "
-          sudo npm install node-red-contrib-moment 
+          sudo npm install node-red-contrib-moment &&
+          sudo npm install node-red-node-openweathermap
         "
-
           
